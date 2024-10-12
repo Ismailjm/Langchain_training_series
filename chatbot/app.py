@@ -10,9 +10,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 os.environ["GEMINI_API_KEY"] = os.getenv("GEMINI_API_KEY")
-print(os.getenv("GEMINI_API_KEY"))
-os.environ["LANGCHAIN_TRACING_V2"] = "TRUE"
+os.environ["LANGCHAIN_TRACING_V2"] = os.getenv("LANGCHAIN_TRACING_V2") # this solved the problem of the project not appearing in langsmith dashboard
 os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
+os.environ["LANGCHAIN_PROJECT"] = os.getenv("LANGCHAIN_PROJECT")
 
 ## prompt template
 
@@ -25,11 +25,11 @@ prompt = ChatPromptTemplate.from_messages(
 
 ## streamlit interface
 
-st.title('Langchain Demo With OPENAI API key')
+st.title('Langchain Demo With Gemini key')
 input_text = st.text_input("Start a convo :)")
 
 ## OpenAI LLM 
-llm = ChatGoogleGenerativeAI(model="gemini-1.0-pro")
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 output_parser = StrOutputParser()
 
 chain = prompt | llm | output_parser
