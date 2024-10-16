@@ -1,5 +1,15 @@
 langchain
 langchain_google_genai
+langchain-google-genai
 langchain-ollama
 python-dotenv
 streamlit
+langserve
+fastapi
+uvicorn
+sse_starlette
+ipykernel
+bs4
+pypdf
+chromadb
+faiss-cpu
