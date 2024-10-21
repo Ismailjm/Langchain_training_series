@@ -18,11 +18,6 @@ app = FastAPI(
     description="A simple API Server"
 )
 
-# add_routes(
-#     app,
-#     ChatOllama,
-#     path="/llama",
-# )
 
 llm = ChatOllama(model="llama3.1")
 
