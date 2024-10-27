@@ -13,3 +13,10 @@ bs4
 pypdf
 chromadb
 faiss-cpu
+arxiv
+wikipedia
+langchainhub
+beautifulsoup4 
+groq 
+langchain-groq
+sentence_transformers
